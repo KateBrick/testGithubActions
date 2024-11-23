@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Assign Issue
-        uses: actions-ecosystem/action-add-assignees@v2
+        uses: actions-ecosystem/action-add-assignees@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           assignees: KateBrick # Replace 'username' with the GitHub username of the team member
