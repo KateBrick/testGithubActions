@@ -12,5 +12,5 @@ jobs:
       - name: Assign Issue
         uses: actions-ecosystem/action-add-assignees@v1
         with:
-          github-token: ${{ secrets.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 }}
+          github-token: ${{ secrets.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 }}
           assignees: KateBrick # Replace 'username' with the GitHub username of the team member
