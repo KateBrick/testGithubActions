@@ -30,4 +30,4 @@ jobs:
         run: find . -type f
 
       - name: Run Java Program
-        run: java HelloWorld
+        run: java Test
