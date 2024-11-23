@@ -23,11 +23,7 @@ jobs:
           java-version: '11' 
 
       - name: Compile Java Program
-        run: |
-          javac -d . HelloWorld.java
-
-      - name: List Directory Structure After Compilation
-        run: find . -type f
+        run: javac -d . HelloWorld.java
 
       - name: Run Java Program
         run: java Test
