@@ -1,4 +1,4 @@
-name: Run Tests on Push or Merge to Main
+name: Run Java Program on Push or Merge to Main
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  build-and-test:
+  build-and-run:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,11 +19,15 @@ jobs:
       - name: Set up JDK
         uses: actions/setup-java@v3
         with:
-          distribution: 'temurin'   # Use the desired Java distribution
-          java-version: '11'        # Specify your Java version
+          distribution: 'temurin'
+          java-version: '11'  # Update this if you're using a different Java version
 
       - name: Compile Java Program
-        run: javac HelloWorld.java
+        run: |
+          javac -d . HelloWorld.java
+
+      - name: List Directory Structure After Compilation
+        run: find . -type f
 
       - name: Run Java Program
         run: java HelloWorld
