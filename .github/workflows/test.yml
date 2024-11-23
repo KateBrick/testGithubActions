@@ -1,15 +1,15 @@
-name: Run Tests on Merge to Main
+name: Run Tests on Push or Merge to Main
 
 on:
+  push:
+    branches:
+      - main
   pull_request:
     branches:
       - main
-    types:
-      - closed
-          
+
 jobs:
   build-and-test:
-    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
 
     steps:
@@ -19,8 +19,8 @@ jobs:
       - name: Set up JDK
         uses: actions/setup-java@v3
         with:
-          distribution: 'temurin'   # Specify the Java distribution
-          java-version: '11'        # Specify your Java version
+          distribution: 'temurin'
+          java-version: '11'
 
       - name: Build with Maven
         run: mvn install
